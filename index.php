@@ -116,7 +116,7 @@
     <div class="section">
         <form action="s.php" method="POST" class="input-container" id="urlForm">
             <label for="longUrl">Enter Long URL:</label>
-            <input type="url" id="longUrl" name="longUrl" required maxlength="130">
+            <input type="url" id="longUrl" name="longUrl" required maxlength="100">
 
             <label for="vanity">Custom Alias (optional):</label>
             <input type="text" id="vanity" name="vanity">
