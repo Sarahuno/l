@@ -52,12 +52,27 @@
             </style>
         </head>
         <body>
+
             <div class='container'>
                 <img src='https://lioneriod.github.io/neco-arc_landing_page/images/necohappy.gif' alt='Cat GIF' class='cat'>
                 <h1>Success</h1>
                 <h2>Your shortened URL is:</h2>
-                <h3>https://cum.rf.gd/$vanity</h3>
+                <h3 id="paramValue"></h3>
                 <a href='https://cum.rf.gd?_UNKOWN_' class='btn'>Back to Home</a>
             </div>
+    <script>
+        // JavaScript code to extract the parameter value from the URL and display it in the paragraph
+        window.onload = function() {
+            // Get the URL parameters
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            // Get the value of the 'param' parameter
+            const paramValue = urlParams.get('param');
+            // Concatenate the parameter value with the string "https://cum.rf.gd/"
+            const fullURL = "https://cum.rf.gd/" + paramValue;
+            // Display the full URL in the paragraph
+            document.getElementById('paramValue').innerText = fullURL;
+        };
+    </script>
         </body>
         </html>
