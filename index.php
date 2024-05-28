@@ -119,7 +119,7 @@
             <input type="url" id="longUrl" name="longUrl" required maxlength="100">
 
             <label for="vanity">Custom Alias (optional):</label>
-            <input type="text" id="vanity" name="vanity">
+            <input type="text" id="vanity" name="vanity" required maxlength="30">
 
             <button type="submit" class="btn">Generate Compact URL</button>
         </form>
