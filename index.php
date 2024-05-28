@@ -115,13 +115,13 @@
     </div>
     <div class="section">
         <form action="s.php" method="POST" class="input-container" id="urlForm">
-            <label for="longUrl">Enter Long ⓤRL:</label>
+            <label for="longUrl">Enter Long URL:</label>
             <input type="url" id="longUrl" name="longUrl" required maxlength="130">
 
             <label for="vanity">Custom Alias (optional):</label>
             <input type="text" id="vanity" name="vanity">
 
-            <button type="submit" class="btn">Generate Compact ⓤRL</button>
+            <button type="submit" class="btn">Generate Compact URL</button>
         </form>
     </div>
     </div>
