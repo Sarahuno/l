@@ -114,17 +114,36 @@
         </div>
     </div>
     <div class="section">
-        <form action="s.php" method="POST" class="input-container">
-            <label for="longUrl">Enter Long ⓤRL:</label>
+        <form action="s.php" method="POST" class="input-container" id="urlForm">
+            <label for="longUrl">Enter Long URL:</label>
             <input type="url" id="longUrl" name="longUrl" required>
 
             <label for="vanity">Custom Alias (optional):</label>
             <input type="text" id="vanity" name="vanity">
 
-            <button type="submit" class="btn">Generate Compact ⓤRL</button>
+            <button type="submit" class="btn">Generate Compact URL</button>
         </form>
     </div>
-</div>
+    </div>
+
+    <script>
+        document.getElementById('urlForm').addEventListener('submit', function(event) {
+            // Prevent the default form submission behavior
+            event.preventDefault();
+            
+            // Get the value of the 'vanity' input field
+            const vanityValue = document.getElementById('vanity').value;
+
+            // Construct the new action URL with the 'vanity' parameter
+            const actionURL = 's.php?param=' + encodeURIComponent(vanityValue);
+
+            // Update the form action attribute
+            document.getElementById('urlForm').setAttribute('action', actionURL);
+
+            // Submit the form
+            document.getElementById('urlForm').submit();
+        });
+    </script>
 
 
 </body>
