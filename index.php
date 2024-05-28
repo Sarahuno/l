@@ -114,32 +114,35 @@
         </div>
     </div>
     <div class="section">
-        <form action="s.php" method="POST" class="input-container" id="urlForm" onsubmit="return validateForm()">
-            <label for="longUrl">Enter Long URL:</label>
-            <input type="url" id="longUrl" name="longUrl" required maxlength="100">
+        <form action="s.php" method="POST" class="input-container" id="urlForm">
+            <label for="longUrl">Enter Long ⓤRL:</label>
+            <input type="url" id="longUrl" name="longUrl" required maxlength="130">
 
             <label for="vanity">Custom Alias (optional):</label>
             <input type="text" id="vanity" name="vanity">
 
-            <button type="submit" class="btn">Generate Compact URL</button>
+            <button type="submit" class="btn">Generate Compact ⓤRL</button>
         </form>
-        <div id="warningMessage" class="warning" style="display: none;">URL length cannot exceed 130 characters.</div>
     </div>
     </div>
 
     <script>
-        function validateForm() {
-            var longUrlInput = document.getElementById('longUrl');
-            var warningMessage = document.getElementById('warningMessage');
+        document.getElementById('urlForm').addEventListener('submit', function(event) {
+            // Prevent the default form submission behavior
+            event.preventDefault();
+            
+            // Get the value of the 'vanity' input field
+            const vanityValue = document.getElementById('vanity').value;
 
-            if (longUrlInput.value.length > 130) {
-                warningMessage.style.display = 'block';
-                return false; // Prevent form submission
-            } else {
-                warningMessage.style.display = 'none';
-                return true; // Allow form submission
-            }
-        }
+            // Construct the new action URL with the 'vanity' parameter
+            const actionURL = 's.php?param=' + encodeURIComponent(vanityValue);
+
+            // Update the form action attribute
+            document.getElementById('urlForm').setAttribute('action', actionURL);
+
+            // Submit the form
+            document.getElementById('urlForm').submit();
+        });
     </script>
 
 
