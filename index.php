@@ -113,36 +113,21 @@
             Welcome to Lίnk-Minifier! Input your lengthy ⓤRL below to generate a Compact ⓤRL.
         </div>
     </div>
-    <div class="section">
-        <form action="s.php" method="POST" class="input-container" id="urlForm">
-            <label for="longUrl">Enter Long URL:</label>
-            <input type="url" id="longUrl" name="longUrl" required maxlength="130">
-
-            <label for="vanity">Custom Alias (optional):</label>
-            <input type="text" id="vanity" name="vanity">
-
-            <button type="submit" class="btn">Generate Compact URL</button>
-        </form>
-    </div>
-    </div>
+<div class="section"><form action="s.php"class="input-container"id="urlForm"method="POST"onsubmit="return validateForm()"><label for="longUrl">Enter Long ⓤRL:</label> <input id="longUrl"name="longUrl"maxlength="100"required type="url"> <label for="vanity">Custom Alias (optional):</label> <input id="vanity"name="vanity"> <button class="btn"type="submit">Generate Compact URL</button></form><div class="warning"id="warningMessage"style="display:none">URL length cannot exceed 130 characters.</div></div>
 
     <script>
-        document.getElementById('urlForm').addEventListener('submit', function(event) {
-            // Prevent the default form submission behavior
-            event.preventDefault();
-            
-            // Get the value of the 'vanity' input field
-            const vanityValue = document.getElementById('vanity').value;
+        function validateForm() {
+            var longUrlInput = document.getElementById('longUrl');
+            var warningMessage = document.getElementById('warningMessage');
 
-            // Construct the new action URL with the 'vanity' parameter
-            const actionURL = 's.php?param=' + encodeURIComponent(vanityValue);
-
-            // Update the form action attribute
-            document.getElementById('urlForm').setAttribute('action', actionURL);
-
-            // Submit the form
-            document.getElementById('urlForm').submit();
-        });
+            if (longUrlInput.value.length > 130) {
+                warningMessage.style.display = 'block';
+                return false; // Prevent form submission
+            } else {
+                warningMessage.style.display = 'none';
+                return true; // Allow form submission
+            }
+        }
     </script>
 
 
