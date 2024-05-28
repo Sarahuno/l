@@ -113,7 +113,19 @@
             Welcome to Lίnk-Minifier! Input your lengthy ⓤRL below to generate a Compact ⓤRL.
         </div>
     </div>
-<div class="section"><form action="s.php"class="input-container"id="urlForm"method="POST"onsubmit="return validateForm()"><label for="longUrl">Enter Long ⓤRL:</label> <input id="longUrl"name="longUrl"maxlength="100"required type="url"> <label for="vanity">Custom Alias (optional):</label> <input id="vanity"name="vanity"> <button class="btn"type="submit">Generate Compact URL</button></form><div class="warning"id="warningMessage"style="display:none">URL length cannot exceed 130 characters.</div></div>
+    <div class="section">
+        <form action="s.php" method="POST" class="input-container" id="urlForm" onsubmit="return validateForm()">
+            <label for="longUrl">Enter Long URL:</label>
+            <input type="url" id="longUrl" name="longUrl" required maxlength="100">
+
+            <label for="vanity">Custom Alias (optional):</label>
+            <input type="text" id="vanity" name="vanity">
+
+            <button type="submit" class="btn">Generate Compact URL</button>
+        </form>
+        <div id="warningMessage" class="warning" style="display: none;">URL length cannot exceed 130 characters.</div>
+    </div>
+    </div>
 
     <script>
         function validateForm() {
