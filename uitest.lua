@@ -649,3 +649,4 @@ local function lib.NewAudioFile(Name, folderName,audio)
 	end)
 
 end
+return lib
