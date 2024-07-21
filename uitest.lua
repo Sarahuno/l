@@ -1,3 +1,4 @@
+lib = {}
 if isfolder("FileSystemUI") then
 print("TRUE")
 else
@@ -161,7 +162,7 @@ local fc = {}
 local cvf = nil
 local showfirst=false
 
-local function NewFolder(Name)
+local function lib.NewFolder(Name)
     if isfolder("FileSystemUI/".._G.Name.."/"..Name) then
      print("TRUE")
     else
@@ -242,7 +243,7 @@ local function NewFolder(Name)
 	TextButton.MouseButton1Click:Connect(onFolderClick)
 end
 
-local function NewLuaFile(Name, folderName,cb)
+local function lib.NewLuaFile(Name, folderName,cb)
 	local FolderFrame = fc[folderName]
 	if not FolderFrame then
 		warn("Folder not found: " .. folderName)
@@ -309,7 +310,7 @@ local function NewLuaFile(Name, folderName,cb)
 
 end
 
-local function ShowImg(Name,folderName)
+local function lib.ShowImg(Name,folderName)
 	local IMG = Instance.new("ScreenGui")
 	local Frame = Instance.new("Frame")
 	local ImageLabel = Instance.new("ImageLabel")
@@ -523,7 +524,7 @@ local function ShowAudio(Name,folderName)
 end
 
 
-local function NewImgFile(Name, folderName,Img)
+local function lib.NewImgFile(Name, folderName,Img)
     print(Img)
 	local FolderFrame = fc[folderName]
 	if not FolderFrame then
@@ -586,7 +587,7 @@ local function NewImgFile(Name, folderName,Img)
 	end)
 
 end
-local function NewAudioFile(Name, folderName,audio)
+local function lib.NewAudioFile(Name, folderName,audio)
     print(audio)
 	local FolderFrame = fc[folderName]
 	if not FolderFrame then
